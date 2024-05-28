@@ -7,6 +7,7 @@
 </head>
 <body>
     <button id="addBtn">추가하기</button>
+    <button id="addBtn2">추가하기2</button>
     <table>
         <thead>
             <tr>
@@ -22,6 +23,18 @@
     <script>
         //sample data 
         const data = {num:1, name:"김구라", addr:"노량진"};
+
+        documnet.querySelector("addBtn2").addEventListener("click",()=>{
+            // backtic 을 이용해서 추가할 tr 요소를 문자열로 미리 준비한다.
+            const html = `
+                <tr>
+                    <td>${data.num}</td>
+                    <td>${data.name}</td>
+                    <td>${data.addr}</td>
+                </tr>
+            `;
+            document.querySelector("tbody").insertAdjacentHTML("beforeend", html);
+        });
 
         document.querySelector("#addBtn").addEventListener("click", ()=>{
             //td 요소 3개 만들어서 참조값을 상수에 담기
